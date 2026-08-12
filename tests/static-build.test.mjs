@@ -10,7 +10,7 @@ test("builds the yumi static site shell", async () => {
   const jsFiles = await readFile(new URL("index.html", dist), "utf8");
   assert.match(html, /yumi — tools for lighter work/);
   assert.match(html, /meta name="description"/);
-  assert.match(html, /og:image/);
+  assert.match(html, /meta property="og:title"/);
   assert.match(jsFiles, /<script type="module"/);
 });
 
